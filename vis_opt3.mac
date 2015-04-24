@@ -33,7 +33,7 @@
 # ---- Geometry settings ----
 # ---------------------------
 
-/changeDetector/hierarchy               true
+#/changeDetector/hierarchy               false
 
 # ---- Detector settings
 #/changeDetector/setMat			G4_Si
@@ -78,8 +78,8 @@
 #/physics/physConstructor EM-Electron-Standard
 #
 #/physics/physConstructor EM-Msc-PhysListOpt1
-/physics/physConstructor EM-Msc-PhysListOpt2
-#/physics/physConstructor EM-Msc-PhysListOpt3
+#/physics/physConstructor EM-Msc-PhysListOpt2
+/physics/physConstructor EM-Msc-PhysListOpt3
 #/physics/physConstructor EM-Msc-PhysListOpt4
 #/physics/physConstructor EM-Msc-PhysListStd
 #/physics/physConstructor EM-Msc-PhysListLivermore
@@ -151,7 +151,7 @@
 #/source/incidentAngle  0.0 deg
 #/source/reference      Martin2003a
 #/source/zVertex	       -1. nm
-/source/zVertex	       -2. mm
+#/source/zVertex	       -2. mm
 
 # --------------------
 # ---- Production ----
