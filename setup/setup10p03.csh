@@ -23,7 +23,7 @@ if ( `uname` == Linux ) then
   setenv G4SYSTEM Linux-g++
   echo "You are working on a $G4SYSTEM system"
 
-setenv CLHEP_BASE_DIR /home/pia/Documents/g4dev/dev/CLHEP/2.1.3.1/$G4SYSTEM
+setenv CLHEP_BASE_DIR /home/pia/Documents/g4dev/dev/CLHEP/2.1.4.1/$G4SYSTEM
 
 # Disable analysis
 #setenv G4ANALYSIS_USE 0
