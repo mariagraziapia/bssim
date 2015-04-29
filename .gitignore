@@ -80,7 +80,7 @@ cmake_install.cmake
 
 *.rtf
 *.doc
-*.docx
+#*.docx
 *.ppt
 *.pptx
 
@@ -89,6 +89,7 @@ cmake_install.cmake
 
 obsolete/
 #produce/
+output/
 
 # Output files
 out*.txt
