@@ -1,0 +1,168 @@
+# ---------------------------------------------------------
+# ---- Settings for electron backscattering simulation ----
+# ---------------------------------------------------------
+
+# -----------------------
+# ---- Visualisation ---- 
+# -----------------------
+
+/vis/scene/create
+/vis/open OGL 600x600-0+0
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# -------------------
+# ---- Verbosity ----
+# -------------------
+
+/control/verbose 2
+/run/verbose 2
+#/event/verbose 2
+#/tracking/verbose 2
+
+# =============================================================
+# Geometry, primary particle and physics settings below 
+# are modified w.r.t. to default values implemented in the code
+# =============================================================
+
+
+# ---------------------------
+# ---- Geometry settings ----
+# ---------------------------
+
+#/changeDetector/hierarchy               false
+
+# ---- Detector settings
+#/changeDetector/setMat			G4_Si
+#/changeDetector/setOuterR 		18.6 cm
+#/changeDetector/setInnerR 		8.6 cm
+
+# ---- Coating shell settings
+#/changeCoating/setMat 			G4_Galactic
+#/changeCoating/setThickness 		1. mm
+
+# ---- Material between target and coating shell
+#/changeInside/setMat 			G4_Galactic
+	
+# ---- Target settings
+# Box Target setting 
+#/changeTarget/setGeomType 		Box
+#/changeTarget/setSizeXYZ 		25. 25. 1.0 mm
+
+# Disk Target setting
+#/changeTarget/setGeomType		Disk
+#/changeTarget/setRadius  		15. mm
+#/changeTarget/setThickness 		1. mm
+
+# Step limit in target
+#/changeTarget/stepLimit                 -9. mm
+
+# Shift of entrance face w.r.t. Z=0
+/changeTarget/shiftZ		        0.000499 nm
+
+# Place target and detection system in neclosing mother rather than world
+#/changeTarget/inBigMother               true
+
+
+# --------------------------
+# ---- Physics settings ----
+# --------------------------
+
+# Models for photons, electrons and positrons
+#
+
+#
+#/physics/physConstructor EM-Electron-Standard
+#
+#/physics/physConstructor EM-Msc-PhysListOpt1
+#/physics/physConstructor EM-Msc-PhysListOpt2
+#/physics/physConstructor EM-Msc-PhysListOpt3
+#/physics/physConstructor EM-Msc-PhysListOpt4
+#/physics/physConstructor EM-Msc-PhysListStd
+/physics/physConstructor EM-Msc-PhysListLivermore
+#/physics/physConstructor EM-Msc-PhysListSS
+#/physics/physConstructor EM-Msc-PhysListWVI
+
+# Secondary production threshold
+#/physics/prodThreshold   0.001 mm
+
+
+
+#############################
+# Geant4 RUN INITIALIZATION #
+#############################
+#
+/run/initialize
+
+
+# Draw geometry:
+/vis/drawVolume
+
+# Specify view angle:
+/vis/viewer/set/viewpointThetaPhi 90. 0.
+
+# Specify zoom value:
+/vis/viewer/zoom 40.
+
+# Specify style (surface or wireframe):
+/vis/viewer/set/style wireframe
+
+# Draw coordinate axes:
+#/vis/scene/add/axes 0 0 0 1 m
+
+# Draw smooth trajectories at end of event, showing trajectory points
+# as markers 2 pixels wide:
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+#/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+#/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+# (if too many tracks cause core dump => /tracking/storeTrajectory 0)
+
+# Draw hits at end of event:
+#/vis/scene/add/hits
+
+/vis/scene/endOfEventAction accumulate
+
+# ---- End visualisation
+
+
+
+# -----------------------
+# ---- Test geometry ----
+# -----------------------
+#/geometry/test/tolerance 0. nm
+# Test with lines starting in the backward hemisphere, forward direction along Z 
+#/geometry/test/position 0. 0. -20. cm
+#/geometry/test/direction 0. 0. 1. um
+#/geometry/test/line_test 
+# Test with lines starting in the forward hemisphere, backward direction along Z
+#/geometry/test/position 0. 0. 20. cm
+#/geometry/test/direction 0. 0. -1. um
+#/geometry/test/line_test 
+
+#/geometry/test/run
+
+# ---------------------------
+# ---- Primary particles ----
+# ---------------------------
+
+#/source/primParticle   e-
+#/source/sigmaEnergy    0. keV
+#/source/incidentAngle  0.0 deg
+#/source/reference      Martin2003a
+#/source/zVertex	       -1. nm
+#/source/zVertex	       -2. mm
+
+# --------------------
+# ---- Production ----
+# --------------------
+
+# Target material
+#/changeTarget/setMat	G4_Si
+
+#/source/primEnergy     100 keV
+/run/beamOn 200
+
