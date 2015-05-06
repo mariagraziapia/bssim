@@ -1,6 +1,8 @@
 License and Disclaimer                                           
                                                         
-The  software and associated documentation in the bssim repository (https://github.com/mariagraziapia/bssim) is copyright of the authors (identified in the following as "the authors") of the publication:
+The  software and associated documentation in the bssim repository 
+(https://github.com/mariagraziapia/bssim) is copyright of the authors 
+(identified in the following as "the authors") of the publications:
 
 Sung Hun Kim, Maria Grazia Pia, Tullio Basaglia, Min Cheol Han, Gabriela Hoff, Chan Hyeong Kim, Paolo Saracco
 Validation Test of Geant4 Simulation of Electron Backscattering
@@ -9,7 +11,8 @@ doi:10.1109/TNS.2015.2401055
 
 
 This  code  implementation and associated documentation is the result of the scientific and technical work of the authors.                     
-By using,  copying,  modifying or distributing the software (or any work based  on the software) you agree to acknowledge its use  and the above mentioned publications in resulting scientific publications, and indicate your acceptance of all terms of this license.  
+By using,  copying,  modifying or distributing the software (or any work based
+on the software) you agree to acknowledge its use  and the above mentioned publications in resulting scientific publications, and indicate your acceptance of all terms of this license.  
 
 Neither the authors of this software system, nor their employing institutes, nor the agencies providing financial support for this work  make  any representation or  warranty, express or implied, regarding  this  software system or assume any liability for its use.
 
