@@ -9,6 +9,7 @@
 
 
 #include "RunAction.hh"
+#include "Summary.hh"
 
 #include "G4Run.hh"
 
@@ -28,19 +29,23 @@ RunAction::~RunAction()
 void RunAction::BeginOfRunAction(const G4Run* run) 
 {
   // Start counting time
-  timerRun.Start();	
+  // timerRun.Start();	
 
   // The run ID is printed at the beginning of each run
   G4cout << "INFORMATION: Run No " 
 	 << run -> GetRunID() 
          << " starts " 
 	 << G4endl;
+
+  // Initialize the Summary for the current run
+  Summary* summary =  Summary::Instance();
+  summary->ResetData();
 }
 
 void RunAction::EndOfRunAction(const G4Run* run) 
 {
   // Stop counting time
-  timerRun.Stop();
+  // timerRun.Stop();
 
   G4int nEvents =  run -> GetNumberOfEvent();
 
@@ -53,6 +58,11 @@ void RunAction::EndOfRunAction(const G4Run* run)
 	 << nEvents
     //         << run -> GetNumberOfEvent() 
 	 << G4endl;
+
+  // Write the summary to a file
+  Summary* summary =  Summary::Instance();
+  summary->SetEvents(nEvents);
+  summary->Dump();
 
 
 }

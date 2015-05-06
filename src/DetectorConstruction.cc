@@ -16,6 +16,7 @@
 #include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
+#include "SDDetector.hh"
 
 #include "G4SystemOfUnits.hh"
 #include "G4PhysicalConstants.hh"
@@ -26,7 +27,7 @@
 #include "G4LogicalVolumeStore.hh"
 #include "G4SolidStore.hh"
 #include "G4RegionStore.hh"
-#include "G4ThreeVector.hh"
+#include "G4SDManager.hh"
 
 #include "G4VisAttributes.hh"
 #include "G4UserLimits.hh"
@@ -415,6 +416,14 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
       
     }
 
+  // ---- Sensitive detectors ----
+
+  G4SDManager* SDManager = G4SDManager::GetSDMpointer();
+
+  SDDetector* detectorSD = new SDDetector("DetectorSD", "DetectorHitsCollection");
+  SDManager->AddNewDetector(detectorSD);
+  
+  logicalSphereDetector->SetSensitiveDetector(detectorSD);
 
   // ---- Visualization ----
 
