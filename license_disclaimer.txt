@@ -1,0 +1,48 @@
+License and Disclaimer                                           *
+                                                        *
+The  software and associated documentation in the bssim repository (https://github.com/mariagraziapia/bssim) is copyright of the authors (identified in the following as "the authors") of the publications:
+
+Sung Hun Kim, Maria Grazia Pia, Tullio Basaglia, Min Cheol Han, Gabriela Hoff, Chan Hyeong Kim, Paolo Saracco
+Validation Test of Geant4 Simulation of Electron Backscattering
+IEEE Trans. Nucl. Sci., vol. 62, no. 2, pp. 451-479 Apr. 2015 
+doi:10.1109/TNS.2015.2401055
+
+
+This  code  implementation and associated documentation is the result of the scientific and technical work of the authors.                     
+By using,  copying,  modifying or distributing the software (or any work based  on the software) you agree to acknowledge its use  and the above mentioned publications in resulting scientific publications, and indicate your acceptance of all terms of this license.  
+
+Neither the authors of this software system, nor their employing institutes, nor the agencies providing financial support for this work  make  any representation or  warranty, express or implied, regarding  this  software system or assume any liability for its use.
+
+Installation, use, reproduction, display, modification and redistribution of this software, with or without modification, in source and binary forms, are permitted on a non-exclusive basis. Any exercise of rights by you under this license is subject to the following conditions:
+
+1. Redistributions of this software, in whole or in part, with or without modification, must reproduce the above copyright notice and these license conditions in this software, the documentation and any other materials provided with the redistributed software.
+
+2. The documentation, if any, included with a redistribution, must include the following notice:
+
+"This product includes software and scientific ideas developed by the authors of 
+
+Sung Hun Kim, Maria Grazia Pia, Tullio Basaglia, Min Cheol Han, Gabriela Hoff, Chan Hyeong Kim, Paolo Saracco
+Validation Test of Geant4 Simulation of Electron Backscattering
+IEEE Trans. Nucl. Sci., vol. 62, no. 2, pp. 451-479 Apr. 2015 
+doi:10.1109/TNS.2015.2401055"
+
+If that is where third-party acknowledgments normally appear, this acknowledgment must be reproduced in the modified version of this software itself.
+  
+3. You may not include this software in whole or in part in any patent or patent application in respect of any modification of this software developed by you. 
+
+4. Scientific publications of any kind deriving from the use of the original or modified software, and/or from ideas exposed in the associated documentation, are not allowed unless agreed with and explicitly authorized by the authors.    
+
+
+5. DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, OF SATISFACTORY QUALITY, AND FITNESS FOR A PARTICULAR PURPOSE OR USE ARE DISCLAIMED. THE AUTHORS MAKE NO REPRESENTATION THAT THE SOFTWARE AND MODIFICATIONS THEREOF, WILL NOT INFRINGE ANY PATENT, COPYRIGHT, TRADE SECRET OR OTHER PROPRIETARY RIGHT.
+
+
+6. LIMITATION OF LIABILITY
+
+THE AUTHORS SHALL HAVE NO LIABILITY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA OR PROFITS, OR BUSINESS INTERRUPTION, HOWEVER CAUSED AND ON ANY THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+ 
+
+7. This license shall terminate with immediate effect and without notice if you fail to comply with any of the terms of this license, or if you institute litigation against any of the authors with regard to this software and associated documentation.
+
