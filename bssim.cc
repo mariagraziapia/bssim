@@ -40,7 +40,7 @@
 #include "G4UIterminal.hh"
 
 //#ifdef G4UI_USE
-#if defined(G4UI_USE) && (defined(G4VERSION_96) || defined(G4VERSION_94))
+#if defined(G4UI_USE) && (defined(G4VERSION_96) || defined(G4VERSION_94) || defined(G4VERSION_102))
 #include "G4UIExecutive.hh"
 #endif
 

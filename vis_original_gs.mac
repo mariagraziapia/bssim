@@ -50,7 +50,7 @@
 # ---- Target settings
 # Box Target setting 
 #/changeTarget/setGeomType 		Box
-#/changeTarget/setSizeXYZ 		5.0 5.0 1.0 mm
+#/changeTarget/setSizeXYZ 		25. 25. 1.0 mm
 
 # Disk Target setting
 #/changeTarget/setGeomType		Disk
@@ -79,12 +79,13 @@
 #
 #/physics/physConstructor EM-Msc-PhysListOpt1
 #/physics/physConstructor EM-Msc-PhysListOpt2
-/physics/physConstructor EM-Msc-PhysListOpt3
+#/physics/physConstructor EM-Msc-PhysListOpt3
 #/physics/physConstructor EM-Msc-PhysListOpt4
 #/physics/physConstructor EM-Msc-PhysListStd
 #/physics/physConstructor EM-Msc-PhysListLivermore
 #/physics/physConstructor EM-Msc-PhysListSS
 #/physics/physConstructor EM-Msc-PhysListWVI
+/physics/physConstructor EM-Msc-PhysListGS
 
 # Secondary production threshold
 #/physics/prodThreshold   0.001 mm
@@ -123,6 +124,9 @@
 
 # Draw hits at end of event:
 #/vis/scene/add/hits
+
+/vis/scene/endOfEventAction accumulate
+
 # ---- End visualisation
 
 

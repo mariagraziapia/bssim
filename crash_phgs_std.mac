@@ -1,0 +1,283 @@
+# ---------------------------------------------------------
+# ---- Settings for electron backscattering simulation ----
+# ---------------------------------------------------------
+
+# -------------------
+# ---- Verbosity ----
+# -------------------
+
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+
+# =============================================================
+# Geometry, primary particle and physics settings below 
+# are modified w.r.t. to default values implemented in the code
+# =============================================================
+
+# --------------------------
+# ---- Physics settings ----
+# --------------------------
+
+# Models for photons, electrons and positrons
+#
+/physics/physConstructor EM-Msc-PhysListGS
+
+# Secondary production threshold
+/physics/prodThreshold   0.001 mm
+
+# ---------------------------
+# ---- Geometry settings ----
+# ---------------------------
+
+# ---- Detector settings
+/changeDetector/setMat			G4_Si
+/changeDetector/setOuterR 		18.6 cm
+/changeDetector/setInnerR 		8.6 cm
+
+# ---- Coating shell settings
+/changeCoating/setMat 			G4_Galactic
+/changeCoating/setThickness 		1. mm
+
+# ---- Material between target and coating shell
+#/changeInside/setMat 			G4_Galactic
+	
+# ---- Target settings
+# Box Target setting 
+#/changeTarget/setGeomType 		Box
+/changeTarget/setSizeXYZ 		25.0 25.0 25.0 mm
+
+# Disk Target setting
+#changeTarget/setGeomType		Disk
+#changeTarget/setRadius  		15. mm
+#changeTarget/setThickness 		1. mm
+
+# Step limit in target
+#/changeTarget/stepLimit                 -9 mm
+
+#############################
+# Geant4 RUN INITIALIZATION #
+#############################
+#
+/run/initialize
+
+# ---------------------------
+# ---- Primary particles ----
+# ---------------------------
+
+/source/primParticle   e-
+/source/sigmaEnergy    0. keV
+/source/incidentAngle  0.0 deg
+# --------------------
+# ---- Production ----
+# --------------------
+
+# Target material
+/changeTarget/setMat	G4_B
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.005 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.01 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.031 MeV
+/run/beamOn 10000
+/source/primEnergy     0.041 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_C
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Mg
+/source/primEnergy     0.0039 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Si
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Ti
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_V
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Cr
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Fe
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Co
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Ni
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+
+/changeTarget/setMat	G4_Cu
+
+/source/primEnergy     0.00393 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0050 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0075 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0100 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0152 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0202 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0310 MeV
+/run/beamOn 10000
+/source/primEnergy     0.0410 MeV
+/run/beamOn 10000
+

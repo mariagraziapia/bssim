@@ -12,7 +12,7 @@
 #include "PhysicsListMessenger.hh"
 #include "Particles.hh"
 
-#ifdef G4VERSION_96
+#if defined(G4VERSION_96) || defined(G4VERSION_102)
 #include "G4EmLivermorePhysics.hh"
 #include "G4EmLowEPPhysics.hh"
 #include "G4EmStandardPhysics_option1.hh"
@@ -22,9 +22,13 @@
 #include "G4EmStandardPhysics.hh"
 #endif
 
-#ifdef G4VERSION_101
+#if defined(G4VERSION_101) || defined(G4VERSION_102)
 #include "G4EmStandardPhysicsSS.hh"
 #include "G4EmStandardPhysicsWVI.hh"
+#endif
+
+#if defined(G4VERSION_102)
+#include "G4EmStandardPhysicsGS.hh"
 #endif
 
 #include "G4VPhysicsConstructor.hh"
@@ -74,7 +78,21 @@ void PhysicsList::RegisterPhysConstructor(const G4String& constrName) {
       // the corresponding physics constructor is instantiated and assigned
       // to the data member emElectron
 
-#if defined(G4VERSION_101)
+#if defined(G4VERSION_102)
+      if (constrName == "EM-Msc-PhysListGS") 
+	{
+	  if (emElectron == 0 && emPositron == 0 && emPhoton == 0)
+	    {
+	      emMsc = new G4EmStandardPhysicsGS;
+	    }
+	  else
+	    {
+	      std::cout << "INVALID ATTEMPT TO INSTANTIATE G4EmStandardPhysicsGS" << std::endl;
+	    }
+	}
+#endif
+
+#if defined(G4VERSION_101) || defined(G4VERSION_102)
 
       if (constrName == "EM-Msc-PhysListSS") 
 	{
@@ -102,7 +120,7 @@ void PhysicsList::RegisterPhysConstructor(const G4String& constrName) {
 
 #endif
 
-#if defined(G4VERSION_96) || defined(G4VERSION_101) 
+#if defined(G4VERSION_96) || defined(G4VERSION_101) || defined(G4VERSION_102)
       if (constrName == "EM-Msc-PhysListLivermore") 
 	{
 	  if (emElectron == 0 && emPositron == 0 && emPhoton == 0)

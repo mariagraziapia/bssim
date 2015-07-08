@@ -31,6 +31,10 @@ ifdef G4VERSION_101
 CPPFLAGS += -DG4VERSION_101
 endif
 
+ifdef G4VERSION_102
+CPPFLAGS += -DG4VERSION_102
+endif
+
 ifdef G4ANALYSIS_USE  
  CPPFLAGS += `aida-config --include`
  LDFLAGS  += `aida-config --lib`

@@ -76,7 +76,7 @@ cmake_install.cmake
 *.zip
 *.tgz
 *.tar
-*.gz
+#*.gz
 
 *.rtf
 *.doc
