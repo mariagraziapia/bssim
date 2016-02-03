@@ -29,6 +29,10 @@
 
 #if defined(G4VERSION_102)
 #include "G4EmStandardPhysicsGS.hh"
+
+#include "PhysListEmStandardISS.hh"
+#include "PhysListEmStandardSSM.hh"
+#include "EmStandardPhysicsSSM.hh"
 #endif
 
 #include "G4VPhysicsConstructor.hh"
@@ -90,6 +94,46 @@ void PhysicsList::RegisterPhysConstructor(const G4String& constrName) {
 	      std::cout << "INVALID ATTEMPT TO INSTANTIATE G4EmStandardPhysicsGS" << std::endl;
 	    }
 	}
+
+      // Clone from test58 for G4eSingleCoulombScatteringModel
+      if (constrName == "EM-Msc-PhysTest58") 
+	{
+	  if (emElectron == 0 && emPositron == 0 && emPhoton == 0)
+	    {
+	      emMsc = new PhysListEmStandardISS;
+	    }
+	  else
+	    {
+	      std::cout << "INVALID ATTEMPT TO INSTANTIATE PhysListEmStandardISS (cloned from test58" << std::endl;
+	    }
+	}
+
+      // Clone from TestEm5 for G4eSingleCoulombScatteringModel
+      if (constrName == "EM-Msc-PhysEmTest5SSM") 
+	{
+	  if (emElectron == 0 && emPositron == 0 && emPhoton == 0)
+	    {
+	      emMsc = new PhysListEmStandardSSM;
+	    }
+	  else
+	    {
+	      std::cout << "INVALID ATTEMPT TO INSTANTIATE PhysListEmStandardSSM (cloned from test58" << std::endl;
+	    }
+	}
+
+      // Clone from G4EmStandardPhysicsSS, modified to force the use of G4eSingleCoulombScatteringModel
+      if (constrName == "EM-Msc-PhysListSSM") 
+	{
+	  if (emElectron == 0 && emPositron == 0 && emPhoton == 0)
+	    {
+	      emMsc = new EmStandardPhysicsSSM;
+	    }
+	  else
+	    {
+	      std::cout << "INVALID ATTEMPT TO INSTANTIATE PhysListEmStandardSSM (cloned from test58" << std::endl;
+	    }
+	}
+
 #endif
 
 #if defined(G4VERSION_101) || defined(G4VERSION_102)

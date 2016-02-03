@@ -50,7 +50,7 @@
 # ---- Target settings
 # Box Target setting 
 #/changeTarget/setGeomType 		Box
-#/changeTarget/setSizeXYZ 		25. 25. 1.0 mm
+/changeTarget/setSizeXYZ 		25. 25. 5.0 mm
 
 # Disk Target setting
 #/changeTarget/setGeomType		Disk
@@ -81,9 +81,9 @@
 #/physics/physConstructor EM-Msc-PhysListOpt2
 #/physics/physConstructor EM-Msc-PhysListOpt3
 #/physics/physConstructor EM-Msc-PhysListOpt4
-/physics/physConstructor EM-Msc-PhysListStd
+#/physics/physConstructor EM-Msc-PhysListStd
 #/physics/physConstructor EM-Msc-PhysListLivermore
-#/physics/physConstructor EM-Msc-PhysListSS
+/physics/physConstructor EM-Msc-PhysListSS
 #/physics/physConstructor EM-Msc-PhysListWVI
 
 # Secondary production threshold
@@ -149,9 +149,9 @@
 # ---- Primary particles ----
 # ---------------------------
 
-#/source/primParticle   e-
-#/source/sigmaEnergy    0. keV
-#/source/incidentAngle  0.0 deg
+/source/primParticle   e-
+/source/sigmaEnergy    0. keV
+/source/incidentAngle  0.0 deg
 #/source/reference      Martin2003a
 #/source/zVertex	       -1. nm
 #/source/zVertex	       -2. mm
@@ -162,9 +162,7 @@
 
 # Target material
 /changeTarget/setMat	G4_Si
-#/changeTarget/setMat	G4_Sn
 
-/source/primEnergy     100 keV
+/source/primEnergy     1. MeV
 /run/beamOn 200
-#/run/beamOn 1000
 
